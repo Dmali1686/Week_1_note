@@ -106,8 +106,19 @@ header p {
 
 .input-section {
     display: flex;
+    flex-direction: column;
     gap: 1rem;
     margin-bottom: 2rem;
+}
+
+#noteTitle {
+    font-weight: 600;
+    font-size: 1.1rem;
+}
+
+.input-section button {
+    align-self: flex-end;
+    padding: 0.8rem 2rem;
 }
 
 input {
@@ -210,4 +221,123 @@ button:active {
     text-align: center;
     margin-bottom: 1rem;
     font-size: 0.9rem;
+}
+
+/* Additional styles for full CRUD */
+.search-section {
+    margin-bottom: 1rem;
+    display: flex;
+}
+
+.search-section input {
+    width: 100%;
+}
+
+textarea {
+    flex: 1;
+    padding: 1rem 1.5rem;
+    border-radius: 12px;
+    border: 1px solid var(--glass-border);
+    background: rgba(0, 0, 0, 0.2);
+    color: var(--text-primary);
+    font-size: 1rem;
+    font-family: inherit;
+    transition: all 0.3s ease;
+    outline: none;
+    resize: vertical;
+    min-height: 100px;
+}
+
+textarea::placeholder {
+    color: var(--text-secondary);
+}
+
+textarea:focus {
+    border-color: var(--accent);
+    box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.2);
+}
+
+.note-title {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: var(--accent);
+}
+
+.note-content {
+    white-space: pre-wrap; /* Preserves newlines and spaces */
+    margin-bottom: 15px;
+}
+
+.note-actions {
+    display: flex;
+    gap: 10px;
+    justify-content: flex-end;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 10px;
+}
+
+.note-actions button {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.85rem;
+    border-radius: 8px;
+}
+
+.btn-edit {
+    background: rgba(245, 158, 11, 0.2);
+    color: #fcd34d;
+    border: 1px solid rgba(245, 158, 11, 0.4);
+}
+.btn-edit:hover {
+    background: rgba(245, 158, 11, 0.4);
+}
+
+.btn-delete {
+    background: rgba(239, 68, 68, 0.2);
+    color: #fca5a5;
+    border: 1px solid rgba(239, 68, 68, 0.4);
+}
+.btn-delete:hover {
+    background: rgba(239, 68, 68, 0.4);
+}
+
+/* Tabs Styling */
+.tabs {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+    border-bottom: 1px solid var(--glass-border);
+    padding-bottom: 1rem;
+}
+
+.tab-btn {
+    flex: 1;
+    background: transparent;
+    border: 1px solid var(--glass-border);
+    color: var(--text-secondary);
+}
+
+.tab-btn.active {
+    background: rgba(255, 255, 255, 0.1);
+    color: var(--text-primary);
+    border-color: var(--accent);
+}
+
+.tab-content {
+    display: none;
+    animation: fadeIn 0.3s ease;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-5px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Ensure hidden overrides display:block if needed */
+.hidden {
+    display: none !important;
 }
